@@ -9,6 +9,7 @@ unsigned sum_of_n_number(int,int);
 unsigned product_of_n_number(int,int);
 void odd_number_between_range(int,int);
 void seventh_number_between_range(int,int);
+void fourth_number_between_range(int,int);
 
 long long int factorial(long long int num)
 {
@@ -91,7 +92,15 @@ void odd_number_between_range(int from,int to)
 
 void seventh_number_between_range(int from,int to)
 {
-  int increment = 7;
+ int increment = 7;
+ for(int count = from ; count <= to ; count+=increment){
+   printf("%d\n",count);
+ }
+}
+
+void fourth_number_between_range(int from,int to)
+{
+ int increment = 4;
  for(int count = from ; count <= to ; count+=increment){
    printf("%d\n",count);
  }
@@ -138,4 +147,8 @@ int main(void)
   printf("Write a range here for every 7th numbers between range :\n");
   scanf("%d %d",&from,&to);
   seventh_number_between_range(from,to);
+
+  printf("Write a range here for every 4th numbers between range :\n");
+  scanf("%d %d",&from,&to);
+  fourth_number_between_range(from,to);
 }
