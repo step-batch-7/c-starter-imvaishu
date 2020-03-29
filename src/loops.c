@@ -2,6 +2,7 @@
 
 long long int factorial(long long int);
 void fibonacci(int);
+void odd_number_series(int);
 
 long long int factorial(long long int num)
 {
@@ -29,6 +30,15 @@ void fibonacci(int range)
   }
 }
 
+void odd_number_series(int upto)
+{
+ for(int count = 0 ; count <= upto ;count++){
+   if(count%2 ==! 0){
+     printf("%d\n",count);
+   }
+ }
+}
+
 int main(void)
 {
   long long int num;
@@ -37,7 +47,11 @@ int main(void)
   scanf("%lld",&num);
   printf("Factorial of given number is %lld\n",factorial(num));
 
-  printf("Write number here for factorial :");
+  printf("Write range here for factorial :");
   scanf("%lld",&num);
   fibonacci(num);
+
+  printf("Write range here for odd_number_series :");
+  scanf("%lld",&num);
+  odd_number_series(num);
 }
