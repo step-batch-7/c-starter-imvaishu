@@ -1,17 +1,25 @@
 #include <stdio.h>
 
-unsigned factorial(unsigned);
+int factorial(int);
 
-unsigned factorial(unsigned num)
+int factorial(int num)
 {
-  return num <= 0 ? 1 : num * factorial(num - 1);
+  int result = 1;
+  if(num <= 0){
+    return result;
+  }
+ for(int term = num ; term > 1 ; term--){
+   result = result * term;
+ }
+  return result;
 }
 
 int main(void)
 {
-  unsigned num;
+  int num;
 
   printf("Write number here for factorial :");
   scanf("%d",&num);
-  printf("Factorial of given number is %u\n",factorial(num));
+
+  printf("Factorial of given number is %d\n",factorial(num));
 }
