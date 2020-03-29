@@ -4,6 +4,7 @@ long long int factorial(long long int);
 void fibonacci(int);
 void odd_number_series(int);
 void even_number_series(int);
+void multiplication_table(int,int);
 
 long long int factorial(long long int num)
 {
@@ -49,9 +50,19 @@ void even_number_series(int upto)
  }
 }
 
+void multiplication_table(int from,int to)
+{
+ for(int count = 1 ; count <= to ; count ++){
+   int result = from * count;
+   printf("%d * %d = %d\n",from,count,result);
+ }
+}
+
 int main(void)
 {
   long long int num;
+  int from;
+  int to;
 
   printf("Write number here for factorial :");
   scanf("%lld",&num);
@@ -68,4 +79,8 @@ int main(void)
   printf("Write number here for even_number_series :");
   scanf("%lld",&num);
   even_number_series(num);
+
+  printf("Write a range here for multiplication table :\n");
+  scanf("%d %d",&from,&to);
+  multiplication_table(from,to);
 }
