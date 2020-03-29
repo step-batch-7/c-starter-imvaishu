@@ -11,6 +11,7 @@ void odd_number_between_range(int,int);
 void seventh_number_between_range(int,int);
 void fourth_number_between_range(int,int);
 unsigned sum_of_even_numbers_between_range(int,int);
+void backwards_n_odd_numbers(int,int);
 
 long long int factorial(long long int num)
 {
@@ -118,6 +119,15 @@ unsigned sum_of_even_numbers_between_range(int from,int to)
  return total;
 }
 
+void backwards_n_odd_numbers(int from,int to)
+{
+  for(int count = from ; count >= to ;count--){
+   if(count % 2 ==! 0){
+     printf("%d\n",count);
+   }
+ }
+}
+
 int main(void)
 {
   long long int num;
@@ -164,7 +174,11 @@ int main(void)
   scanf("%d %d",&from,&to);
   fourth_number_between_range(from,to);
 
-   printf("Write a range here for sum of even numbers between range :\n");
+  printf("Write a range here for sum of even numbers between range :\n");
   scanf("%d %d",&from,&to);
   printf("sum of given even number between given range is %u\n",sum_of_even_numbers_between_range(from,to));
+
+  printf("Write number here for odd_number_series between N to 1 backwards:\n");
+  scanf("%d %d",&from,&to);
+  backwards_n_odd_numbers(from,to);
 }
