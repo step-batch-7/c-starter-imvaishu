@@ -10,6 +10,7 @@ unsigned product_of_n_number(int,int);
 void odd_number_between_range(int,int);
 void seventh_number_between_range(int,int);
 void fourth_number_between_range(int,int);
+unsigned sum_of_even_numbers_between_range(int,int);
 
 long long int factorial(long long int num)
 {
@@ -106,6 +107,17 @@ void fourth_number_between_range(int from,int to)
  }
 }
 
+unsigned sum_of_even_numbers_between_range(int from,int to)
+{
+ unsigned total = 0;
+ for(int count = from ; count <= to ;count++){
+   if(count%2 == 0){
+     total = total+count;
+   }
+ }
+ return total;
+}
+
 int main(void)
 {
   long long int num;
@@ -151,4 +163,8 @@ int main(void)
   printf("Write a range here for every 4th numbers between range :\n");
   scanf("%d %d",&from,&to);
   fourth_number_between_range(from,to);
+
+   printf("Write a range here for sum of even numbers between range :\n");
+  scanf("%d %d",&from,&to);
+  printf("sum of given even number between given range is %u\n",sum_of_even_numbers_between_range(from,to));
 }
