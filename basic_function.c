@@ -5,6 +5,7 @@ char is_odd(int);
 long long int square(int);
 long long int cube(int);
 int gcd(int,int);
+int lcm(int,int);
 
 char is_even(int num)
 {
@@ -41,6 +42,11 @@ int gcd(int num1,int num2)
  return reminder;
 }
 
+int lcm(int num1,int num2)
+{
+  return num1 * num2 / gcd(num1,num2);
+}
+
 int main(void)
 {
   int num ;
@@ -66,4 +72,8 @@ int main(void)
   printf("Write two numbers here to find GCD of number :\n");
   scanf("%d %d",&num1,&num2);
   printf("GCD of given num is %d\n",gcd(num1,num2));
+
+  printf("Write two numbers here to find LCM of number :\n");
+  scanf("%d %d",&num1,&num2);
+  printf("LCM of given num is %d\n",lcm(num1,num2));
 }
