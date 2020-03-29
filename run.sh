@@ -1,1 +1,1 @@
-gcc -o ./bin/basic_functions basic_function.c && ./bin/basic_functions
+gcc -o ./bin/basic_functions ./src/basic_function.c && ./bin/basic_functions
