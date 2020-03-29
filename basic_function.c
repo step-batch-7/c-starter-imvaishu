@@ -10,6 +10,7 @@ int lcm(int,int);
 double simple_interest(float,float,float);
 double compound_interest(float,float,float);
 double fahrenheit_temp_convertor(float);
+double centigrade_temp_convertor(float);
 
 char is_even(int num)
 {
@@ -67,6 +68,11 @@ double fahrenheit_temp_convertor(float fahrenheit_temp)
   return (fahrenheit_temp - 32) * 5/9;
 }
 
+double centigrade_temp_convertor(float centigrade_temp)
+{
+  return 1.8 * centigrade_temp + 32;
+}
+
 int main(void)
 {
   int num ;
@@ -76,6 +82,8 @@ int main(void)
   float interest_rate;
   float time_period;
   float fahrenheit_temp;
+  float centigrade_temp;
+
 
   printf("Write number here to check whether the num is even or not :");
   scanf("%d",&num);
@@ -111,5 +119,9 @@ int main(void)
 
   printf("Write fahrenheit temperature to convert into centigrade :\n");
   scanf("%f",&fahrenheit_temp);
-  printf("LCM of given num is %f degree celsius\n",fahrenheit_temp_convertor(fahrenheit_temp));
+  printf("centigrade temp of given fahrenheit temp is %f degree celsius\n",fahrenheit_temp_convertor(fahrenheit_temp));
+
+  printf("Write centigrade temperature to convert into fahrenheit :\n");
+  scanf("%f",&centigrade_temp);
+  printf("fahrenheit temp of given centigrade temp is %f degree\n",centigrade_temp_convertor(centigrade_temp));
 }
