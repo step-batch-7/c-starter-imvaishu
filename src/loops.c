@@ -7,6 +7,7 @@ void even_number_series(int);
 void multiplication_table(int,int);
 unsigned sum_of_n_number(int,int);
 unsigned product_of_n_number(int,int);
+void odd_number_between_range(int,int);
 
 long long int factorial(long long int num)
 {
@@ -78,6 +79,15 @@ unsigned product_of_n_number(int from,int to)
  return total;
 }
 
+void odd_number_between_range(int from,int to)
+{
+  for(int count = from ; count <= to ;count++){
+   if(count%2 ==! 0){
+     printf("%d\n",count);
+   }
+ }
+}
+
 int main(void)
 {
   long long int num;
@@ -111,4 +121,8 @@ int main(void)
   printf("Write a range here for product of N number :\n");
   scanf("%d %d",&from,&to);
   printf("product of given  N number between given range is %u\n",product_of_n_number(from,to));
+
+  printf("Write a range here for odd numbers between range :\n");
+  scanf("%d %d",&from,&to);
+  odd_number_between_range(from,to);
 }
