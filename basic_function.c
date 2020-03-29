@@ -12,6 +12,7 @@ double compound_interest(float,float,float);
 double fahrenheit_temp_convertor(float);
 double centigrade_temp_convertor(float);
 int greatest_of3(int,int,int);
+int average_of3(int,int,int);
 
 char is_even(int num)
 {
@@ -80,6 +81,11 @@ int greatest_of3(int num1,int num2,int num3)
   return greatest_of2 > num3 ? greatest_of2 : num3;
 }
 
+int average_of3(int num1,int num2,int num3)
+{
+  return ( num1 + num2 + num3 ) / 3;
+}
+
 int main(void)
 {
   int num ;
@@ -136,4 +142,8 @@ int main(void)
   printf("Write three numbers here to find greatest of three numbers :\n");
   scanf("%d %d %d",&num1,&num2,&num3);
   printf("Greatest of given three numbres is %d\n",greatest_of3(num1,num2,num3));
+
+  printf("Write three numbers here to find average of three numbers :\n");
+  scanf("%d %d %d",&num1,&num2,&num3);
+  printf("average of given three numbres is %d\n",average_of3(num1,num2,num3));
 }
