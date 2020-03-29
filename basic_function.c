@@ -11,6 +11,7 @@ double simple_interest(float,float,float);
 double compound_interest(float,float,float);
 double fahrenheit_temp_convertor(float);
 double centigrade_temp_convertor(float);
+int greatest_of3(int,int,int);
 
 char is_even(int num)
 {
@@ -73,11 +74,18 @@ double centigrade_temp_convertor(float centigrade_temp)
   return 1.8 * centigrade_temp + 32;
 }
 
+int greatest_of3(int num1,int num2,int num3)
+{
+  int greatest_of2 = num1 > num2 ?  num1 : num2;
+  return greatest_of2 > num3 ? greatest_of2 : num3;
+}
+
 int main(void)
 {
   int num ;
-  int num1 ;
-  int num2 ;
+  int num1;
+  int num2;
+  int num3;
   float principle;
   float interest_rate;
   float time_period;
@@ -124,4 +132,8 @@ int main(void)
   printf("Write centigrade temperature to convert into fahrenheit :\n");
   scanf("%f",&centigrade_temp);
   printf("fahrenheit temp of given centigrade temp is %f degree\n",centigrade_temp_convertor(centigrade_temp));
+
+  printf("Write three numbers here to find greatest of three numbers :\n");
+  scanf("%d %d %d",&num1,&num2,&num3);
+  printf("Greatest of given three numbres is %d\n",greatest_of3(num1,num2,num3));
 }
