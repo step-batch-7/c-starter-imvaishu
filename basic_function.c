@@ -6,7 +6,7 @@ long long int square(int);
 long long int cube(int);
 int gcd(int,int);
 int lcm(int,int);
-unsigned simple_interest(unsigned,unsigned,unsigned);
+float simple_interest(float,float,float);
 
 char is_even(int num)
 {
@@ -48,7 +48,7 @@ int lcm(int num1,int num2)
   return num1 * num2 / gcd(num1,num2);
 }
 
-unsigned simple_interest(unsigned deposit, unsigned interest, unsigned time)
+float simple_interest(float deposit, float interest, float time)
 {
   return deposit * interest * time / 100;
 }
@@ -58,9 +58,9 @@ int main(void)
   int num ;
   int num1 ;
   int num2 ;
-  int deposit;
-  int interest;
-  int time;
+  float deposit;
+  float interest;
+  float time;
 
   printf("Write number here to check whether the num is even or not :");
   scanf("%d",&num);
@@ -87,6 +87,6 @@ int main(void)
   printf("LCM of given num is %d\n",lcm(num1,num2));
 
   printf("Write deposit,rate of interest and time here to find simple interest :\n");
-  scanf("%d %d %d",&deposit,&interest,&time);
-  printf("LCM of given num is %d\n",simple_interest(deposit,interest,time));
+  scanf("%f %f %f",&deposit,&interest,&time);
+  printf("LCM of given num is %f\n",simple_interest(deposit,interest,time));
 }
