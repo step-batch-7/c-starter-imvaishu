@@ -6,6 +6,7 @@ void odd_number_series(int);
 void even_number_series(int);
 void multiplication_table(int,int);
 unsigned sum_of_n_number(int,int);
+unsigned product_of_n_number(int,int);
 
 long long int factorial(long long int num)
 {
@@ -68,6 +69,15 @@ unsigned sum_of_n_number(int from,int to)
  return total;
 }
 
+unsigned product_of_n_number(int from,int to)
+{
+  int total = 1;
+  for(int count = from ; count <= to ; count++){
+   total = total * count;
+ }
+ return total;
+}
+
 int main(void)
 {
   long long int num;
@@ -78,7 +88,7 @@ int main(void)
   scanf("%lld",&num);
   printf("Factorial of given number is %lld\n",factorial(num));
 
-  printf("Write range here for factorial :");
+  printf("Write range here for fibonacci series :");
   scanf("%lld",&num);
   fibonacci(num);
 
@@ -96,5 +106,9 @@ int main(void)
 
   printf("Write a range here for sum of N number :\n");
   scanf("%d %d",&from,&to);
-   printf("sum of given  N number between given range is %u\n",sum_of_n_number(from,to));
+  printf("sum of given  N number between given range is %u\n",sum_of_n_number(from,to));
+
+  printf("Write a range here for product of N number :\n");
+  scanf("%d %d",&from,&to);
+  printf("product of given  N number between given range is %u\n",product_of_n_number(from,to));
 }
