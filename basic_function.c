@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 
 char is_even(int);
 char is_odd(int);
@@ -6,7 +7,8 @@ long long int square(int);
 long long int cube(int);
 int gcd(int,int);
 int lcm(int,int);
-float simple_interest(float,float,float);
+double simple_interest(float,float,float);
+double compound_interest(float,float,float);
 
 char is_even(int num)
 {
@@ -48,9 +50,15 @@ int lcm(int num1,int num2)
   return num1 * num2 / gcd(num1,num2);
 }
 
-float simple_interest(float deposit, float interest, float time)
+double simple_interest(float principle, float interest_rate, float time_period)
 {
-  return deposit * interest * time / 100;
+  return principle * interest_rate * time_period / 100;
+}
+
+double compound_interest(float principle, float interest_rate, float time_period)
+{
+  double total_amount = principle * pow((1+interest_rate/100),time_period);
+  return total_amount - principle;
 }
 
 int main(void)
@@ -58,9 +66,9 @@ int main(void)
   int num ;
   int num1 ;
   int num2 ;
-  float deposit;
-  float interest;
-  float time;
+  float principle;
+  float interest_rate;
+  float time_period;
 
   printf("Write number here to check whether the num is even or not :");
   scanf("%d",&num);
@@ -86,7 +94,11 @@ int main(void)
   scanf("%d %d",&num1,&num2);
   printf("LCM of given num is %d\n",lcm(num1,num2));
 
-  printf("Write deposit,rate of interest and time here to find simple interest :\n");
-  scanf("%f %f %f",&deposit,&interest,&time);
-  printf("LCM of given num is %f\n",simple_interest(deposit,interest,time));
+  printf("Write principle, interest_rate and time_period here to find simple interest :\n");
+  scanf("%f %f %f",&principle,&interest_rate,&time_period);
+  printf("LCM of given num is %f\n",simple_interest(principle,interest_rate,time_period));
+
+  printf("Write principle, interest_rate and time_period here to find compound interest :\n");
+  scanf("%f %f %f",&principle,&interest_rate,&time_period);
+  printf("LCM of given num is %f\n",compound_interest(principle,interest_rate,time_period));
 }
