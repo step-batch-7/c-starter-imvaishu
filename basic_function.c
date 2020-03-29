@@ -9,6 +9,7 @@ int gcd(int,int);
 int lcm(int,int);
 double simple_interest(float,float,float);
 double compound_interest(float,float,float);
+double fahrenheit_temp_convertor(float);
 
 char is_even(int num)
 {
@@ -61,6 +62,11 @@ double compound_interest(float principle, float interest_rate, float time_period
   return total_amount - principle;
 }
 
+double fahrenheit_temp_convertor(float fahrenheit_temp)
+{
+  return (fahrenheit_temp - 32) * 5/9;
+}
+
 int main(void)
 {
   int num ;
@@ -69,6 +75,7 @@ int main(void)
   float principle;
   float interest_rate;
   float time_period;
+  float fahrenheit_temp;
 
   printf("Write number here to check whether the num is even or not :");
   scanf("%d",&num);
@@ -101,4 +108,8 @@ int main(void)
   printf("Write principle, interest_rate and time_period here to find compound interest :\n");
   scanf("%f %f %f",&principle,&interest_rate,&time_period);
   printf("LCM of given num is %f\n",compound_interest(principle,interest_rate,time_period));
+
+  printf("Write fahrenheit temperature to convert into centigrade :\n");
+  scanf("%f",&fahrenheit_temp);
+  printf("LCM of given num is %f degree celsius\n",fahrenheit_temp_convertor(fahrenheit_temp));
 }
