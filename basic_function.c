@@ -1,18 +1,19 @@
 #include <stdio.h>
 
-char isEven(int);
-char isOdd(int);
+char is_even(int);
+char is_odd(int);
 long long int square(int);
 long long int cube(int);
+int gcd(int,int);
 
-char isEven(int num)
+char is_even(int num)
 {
   return !(num % 2);
 }
 
-char isOdd(int num)
+char is_odd(int num)
 {
-  return !isEven(num);
+  return !is_even(num);
 }
 
 long long int square(int num)
@@ -25,16 +26,34 @@ long long int cube(int num)
   return square(num) * num;
 }
 
+int gcd(int num1,int num2)
+{
+ int reminder = num1;
+ if(num2 > num1){
+   num1 = num2;
+   num2 = reminder;
+ }
+ while(num2 != 0){
+   reminder = num2;
+   num2 = num1 % num2;
+   num1 = reminder;
+ }
+ return reminder;
+}
+
 int main(void)
 {
   int num ;
+  int num1 ;
+  int num2 ;
+
   printf("Write number here to check whether the num is even or not :");
   scanf("%d",&num);
-  printf("%s",isEven(num) ? "number is even\n" : "number is not even\n");
+  printf("%s",is_even(num) ? "number is even\n" : "number is not even\n");
 
   printf("Write number here to check whether the num is odd or not :");
   scanf("%d",&num);
-  printf("%s",isOdd(num) ? "number is odd\n" : "number is not odd\n");
+  printf("%s",is_odd(num) ? "number is odd\n" : "number is not odd\n");
 
   printf("Write number here to find square of number :");
   scanf("%d",&num);
@@ -43,4 +62,8 @@ int main(void)
   printf("Write number here to find cube of number :");
   scanf("%d",&num);
   printf("cube of given num is %lld\n",cube(num));
+
+  printf("Write two numbers here to find GCD of number :\n");
+  scanf("%d %d",&num1,&num2);
+  printf("GCD of given num is %d\n",gcd(num1,num2));
 }
